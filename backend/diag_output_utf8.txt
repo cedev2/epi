@@ -1,0 +1,14 @@
+[dotenv@17.2.3] injecting env (7) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+Database connected.
+
+--- RECENT MARKS ---
+[ID: 8] Student: 2 | Sub: Art and Craft | Score: 12/100 | Term: Term 1 | Type: CAT | Created: Sun Feb 01 2026 15:00:37 GMT-0800 (Pacific Standard Time)
+[ID: 7] Student: 2 | Sub: English | Score: 12/100 | Term: Term 1 | Type: Exam | Created: Sun Feb 01 2026 14:47:00 GMT-0800 (Pacific Standard Time)
+[ID: 6] Student: 2 | Sub: Mathematics | Score: 12/100 | Term: Term 1 | Type: CAT | Created: Sun Feb 01 2026 14:44:26 GMT-0800 (Pacific Standard Time)
+[ID: 5] Student: 2 | Sub: General | Score: 50/77 | Term: Term 1 | Type: Exam | Created: Sun Feb 01 2026 14:29:05 GMT-0800 (Pacific Standard Time)
+
+--- ALL STUDENTS ---
+[ID: 2] Name: student1 | Grade: "Grade 2" | Reg: 26EPI0001
+
+Total Marks in DB: 4
+Total Students in DB: 1

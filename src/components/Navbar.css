@@ -1,0 +1,258 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 0.5rem 0;
+    transition: var(--transition);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 110px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    height: 100%;
+    padding: 10px 0;
+}
+
+.logo-img {
+    max-height: 100px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.logo-container:hover .logo-img {
+    transform: scale(1.05);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.school-name {
+    color: var(--primary);
+    font-size: 1.4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0;
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+}
+
+.school-motto {
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin: 2px 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.school-values {
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 0.5px;
+    opacity: 0.8;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-md);
+}
+
+.nav-links a {
+    font-weight: 500;
+    color: var(--text-main);
+    position: relative;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.nav-links a.active {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary);
+    border-radius: 2px;
+}
+
+/* Login Button Specifics */
+.nav-links .login-btn {
+    margin-left: 1rem;
+    padding: 0.6rem 1.5rem;
+    background-color: var(--primary);
+    color: white;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-links .login-btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    color: white;
+    /* Ensure text remains white */
+}
+
+.nav-links .login-btn.active::after {
+    display: none;
+    /* No underline for button */
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary);
+    border-radius: 3px;
+    transition: var(--transition);
+}
+
+
+.mobile-brand {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .school-values {
+        font-size: 0.65rem;
+    }
+
+    .school-name {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-container {
+        gap: 10px;
+    }
+
+    .logo-img {
+        max-height: 80px;
+    }
+
+    .school-name {
+        font-size: 1rem;
+        letter-spacing: -0.2px;
+    }
+
+    .school-motto {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+    }
+
+    .school-values {
+        font-size: 0.6rem;
+        letter-spacing: 0.2px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 110px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 90px);
+        background-color: white;
+        flex-direction: column;
+        padding: 2rem 0;
+        transition: var(--transition);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        gap: 2rem;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .bar.active:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .bar.active:nth-child(2) {
+        opacity: 0;
+    }
+
+    .bar.active:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .mobile-brand {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0 1rem 1.5rem 1rem;
+        margin-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        text-align: center;
+    }
+
+    .mobile-brand h3 {
+        color: var(--primary);
+        font-weight: 800;
+        font-size: 1.25rem;
+        margin-bottom: 0.25rem;
+        letter-spacing: -0.5px;
+    }
+
+    .mobile-brand .motto {
+        color: var(--accent);
+        font-weight: 700;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    .mobile-brand .values {
+        color: var(--text-muted);
+        font-size: 0.75rem;
+        font-weight: 600;
+        opacity: 0.8;
+        letter-spacing: 0.5px;
+    }
+}
